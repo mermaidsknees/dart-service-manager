@@ -1,0 +1,107 @@
+<template>
+
+<div class="main-container">
+    <div class="text-container">
+        <div class="textbox">LOREM IPSUM <br>DOLOR SIT AMET</div>
+        <div class="textbox-lite">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        </div>
+        <div class="button-container">
+            <button class="buttonOne">BUY NOW</button>
+            <button class="buttonTwo">TRY FOR FREE</button>
+        </div>
+        <div class="background">
+            <img class="background" src="../assets/save2.png" />
+        </div>
+    </div>
+</div>
+    
+</template>
+
+<script>
+export default {
+    
+}
+</script>
+
+
+<style scoped lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.background{
+    width:100%;
+    height:100%;
+}
+.textbox{
+    left: 8vw;
+    position:absolute;
+    text-align: left;
+    margin-top:15vw;
+    font-family: 'Raleway',sans-serif;
+    font-weight:900;    
+    color:white;    
+    font-size:3em;
+}
+
+.textbox-lite{
+    line-height: 1.7;
+    width:37vw;
+    left:8vw;
+    position:absolute;
+    text-align: left;
+    margin-top:24vw;
+    font-family:'Raleway',sans-serif;
+    color:white;
+    display:flex;
+    justify-content: center;
+}
+
+
+.button-container{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: #fff;
+    box-shadow: 10px;;
+
+}
+.buttonOne{
+    position:absolute;
+    left:8vw;
+    margin-top:32vw;
+    background-color:#050422;
+    color:white;
+    border-radius:5px;
+    padding: 0.75rem 1rem;
+	border: 0;
+    cursor: pointer;
+    box-shadow: 5px 6px 10px 1px rgba(0,0,0,0.19);
+  
+    
+      &:hover{
+        background-color:white;
+        color:#050422;
+        
+    }
+}
+.buttonTwo{
+    position: absolute;
+    left:16vw;
+    margin-top:32vw;
+    padding: 0.75rem 1rem;
+    border-radius:5px;
+    border: 0;
+    color:black;
+    background-color:white;
+    cursor:pointer;
+    box-shadow: 5px 6px 10px 1px rgba(0,0,0,0.19);
+
+    &:hover{
+        background-color:#050422;
+        color:white;
+    }
+
+}
+
+</style>
