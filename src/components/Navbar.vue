@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <div class="container">
+    <div class="animate__animated animate__slideInDown box">
         <img class="logo" src="../assets/save.png" />
       <div class="logo-container">
       </div>
@@ -83,7 +83,7 @@ export default {
     color:black;
   }
 }
-.container {
+.box {
   display: flex;
   flex-direction: row;
   font-family: "Raleway", sans-serif;

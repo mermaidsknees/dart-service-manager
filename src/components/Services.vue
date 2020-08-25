@@ -9,11 +9,11 @@
     <div @click="slideAnimation(index)" v-for="(item,index) of itemArray" :key="item" class="service-box">
       <div :class="{active:isActive[index]}" class="service-item">
         <div class="service-text">{{item.title}}</div>
-        <div  class="image"><img v-bind:src="getImgAdress(index)"/></div>
+        <div class="image"><img v-bind:src="getImgAdress(index)"/></div>
         <div class="image-two" @click="slideAnimation(index)"><img style="width:20px;height:20px;" src="../assets/arrow_down.png" /></div>
         <div class="box">
-          <div class="inner-text" v-if="isActive[index]">  {{item.description}} </div>
-          <img id="mock-image" v-if="isActive[index]" src="../assets/mock-image.jpg">
+          <div class="inner-text fade-in" v-if="isActive[index]">  {{item.description}} </div>
+          <img id="mock-image" class="fade-in" v-if="isActive[index]" src="../assets/mock-image.jpg">
         </div>
       </div>
     </div>
@@ -33,7 +33,6 @@ export default {
         {title:"SETTINGS",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"},
         {title:"FEED",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"}
         ],
-        imgs:[0,1,2,3,4],
         isActive:[false,false,false,false,false]
     };
   },
@@ -44,6 +43,8 @@ export default {
     slideAnimation(index){
       let value = !this.isActive[index]
       this.isActive.splice(index,1,value)
+      
+      
     }
   }
 };
@@ -74,7 +75,7 @@ export default {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   position: absolute;
-  margin-top: 1vw;
+  margin-top: 1.25vw;
   margin-left: 5vw;
   font-size: 0.7em;
 }
@@ -83,13 +84,13 @@ export default {
   width: 50vw;
   box-shadow: 5px 6px 10px 1px rgba(0, 0, 0, 0.19);
   border-radius: 8px;
+  transition:height 0.6s;
 }
 .image {
   position: absolute;
   margin-left:2vw;
-  margin-top:0.8vw;
+  margin-top:1vw;
 }
-
 .image img{
     width:20px;
     height:20px;
@@ -106,6 +107,7 @@ export default {
   width: 50vw;
   box-shadow: 5px 6px 10px 1px rgba(0, 0, 0, 0.19);
   border-radius: 8px;
+  transition: height 0.6s;
 }
 .inner-text{
   font-family: "Raleway", sans-serif;
@@ -122,6 +124,26 @@ export default {
   margin-right:30vw;
   margin-top:6vw;
   border-radius:3px;
+  transition-delay: 1s;
+}
+
+
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.25s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 </style>

@@ -2,16 +2,16 @@
 
 <div class="main-container">
     <div class="text-container">
-        <div class="textbox">LOREM IPSUM <br>DOLOR SIT AMET</div>
-        <div class="textbox-lite">
+        <div class="animate__animated animate__slideInLeft textbox" >LOREM IPSUM <br>DOLOR SIT AMET</div>
+        <div class="animate__animated animate__slideInLeft textbox-lite">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         </div>
         <div class="button-container">
-            <button class="buttonOne">BUY NOW</button>
-            <button class="buttonTwo">TRY FOR FREE</button>
+            <button class="animate__animated animate__slideInDown buttonOne">BUY NOW</button>
+            <button class="animate__animated animate__slideInDown buttonTwo">TRY FOR FREE</button>
         </div>
         <div class="background">
-            <img class="background" src="../assets/save2.png" />
+            <img class="background"  />
         </div>
     </div>
 </div>
@@ -30,7 +30,11 @@ export default {
 
 .background{
     width:100%;
-    height:100%;
+    height:45vw;
+    background-image: url('../assets/save2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .textbox{
     left: 8vw;

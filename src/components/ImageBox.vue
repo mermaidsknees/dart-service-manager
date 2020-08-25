@@ -7,9 +7,9 @@
         </div>
         <div class="icons-container">
             <div class="flexbox">
-                <img src="../assets/img3.png">
-                <img src="../assets/img2.png">
-                <img src="../assets/img1.png">
+                <img class="hvr-grow" src="../assets/img3.png">
+                <img class="hvr-grow" src="../assets/img2.png">
+                <img class="hvr-grow" src="../assets/img1.png">
             </div>
             <div class="flexbox-text">
                 <div> 
@@ -84,5 +84,21 @@ export default {
         margin-top:2vw;
         margin-bottom:0.6vw;
     }
+    /* Grow */
+    .hvr-grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+    }
 
+    .hvr-grow:hover,
+    .hvr-grow:focus,
+    .hvr-grow:active {
+        transform: scale(1.1);
+    }
 </style>

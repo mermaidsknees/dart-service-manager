@@ -47,6 +47,6 @@ export default {
     display:flex;
     justify-content:center;
     margin-left:3vw;
-    margin-top:3vw;
+    margin-top:4vw;
 }
 </style>
