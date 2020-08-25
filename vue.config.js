@@ -1,3 +1,3 @@
 module.exports={
-    publicPath:"mermaidsknees"
+    publicPath:"mermaidsknees.github.io"
 }
