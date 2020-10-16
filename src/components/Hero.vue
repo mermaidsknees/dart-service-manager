@@ -44,16 +44,20 @@ export default {
     font-family: 'Raleway',sans-serif;
     font-weight:900;    
     color:white;    
-    font-size:3em;
+    font-size:2.8vw;
+     @media only screen and (max-width: 800px) {
+      font-size:4vw;
+  }
 }
 
 .textbox-lite{
     line-height: 1.7;
     width:37vw;
     left:8vw;
+    font-size:0.93vw;
     position:absolute;
     text-align: left;
-    margin-top:24vw;
+    margin-top:24.5vw;
     font-family:'Raleway',sans-serif;
     color:white;
     display:flex;
@@ -74,10 +78,11 @@ export default {
     position:absolute;
     left:8vw;
     margin-top:32vw;
+    font-size:0.8vw;
     background-color:#050422;
     color:white;
     border-radius:5px;
-    padding: 0.75rem 1rem;
+    padding: 0.75vw 1vw;
 	border: 0;
     cursor: pointer;
     box-shadow: 5px 6px 10px 1px rgba(0,0,0,0.19);
@@ -88,14 +93,16 @@ export default {
         color:#050422;
         
     }
+
 }
 .buttonTwo{
     position: absolute;
-    left:16vw;
+    left:18vw;
     margin-top:32vw;
-    padding: 0.75rem 1rem;
+    padding: 0.75vw 1vw;
     border-radius:5px;
     border: 0;
+    font-size:0.8vw;
     color:black;
     background-color:white;
     cursor:pointer;
@@ -105,6 +112,7 @@ export default {
         background-color:#050422;
         color:white;
     }
+
 
 }
 

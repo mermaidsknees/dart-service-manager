@@ -2,7 +2,7 @@
 	<div class="main">
 		<h1>Our Team</h1>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur voluptatem iusto magna</p>
-		<div v-for="(item,index) of itemArray" :key="item" class="imagebox">
+		<div v-for="(item,index) of itemArray" :key="item" class="hvr-grow imagebox">
 			<img :class="{isCenter:isCenter[index]}" v-bind:src="getImageAdress(index)" />
 		</div>
 		<div class="infobox">
@@ -112,8 +112,21 @@ export default {
 
 }
 
-.isCenter {
-	height: 8vw;
-	width: 8vw;
-}
+  .hvr-grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+    }
+
+    .hvr-grow:hover,
+    .hvr-grow:focus,
+    .hvr-grow:active {
+        transform: scale(1.3);
+    }
+
 </style>

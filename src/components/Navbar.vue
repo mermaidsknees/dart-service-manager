@@ -1,7 +1,7 @@
 <template>
   <div class="root">
     <div class="animate__animated animate__slideInDown box">
-        <img class="logo" src="../assets/save.png" />
+        <img class="hvr-grow logo" src="../assets/save.png" />
       <div class="logo-container">
       </div>
       <div class="nav-items">
@@ -44,8 +44,8 @@ export default {
 .logo {
   margin-top: 1.3vw;
   margin-right:2vw;
-  width: 29px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
 
 }
 
@@ -96,5 +96,13 @@ export default {
   background-color: transparent !important;
   position: absolute;
   // background-color:#42b983;
+}
+
+.hvr-grow{
+  display:inline-block;
+
+  &:hover{
+    transform:scale(1.1)
+  }
 }
 </style>

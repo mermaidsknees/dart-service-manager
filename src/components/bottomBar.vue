@@ -1,7 +1,7 @@
 <template>
   <div class="bottomBar">
     <div class="logobox">
-      <img class="logo" src="../assets/save.png" />
+      <img class="hvr-grow logo" src="../assets/save.png" />
       <!-- <p style="color:white">Dart</p>
       <p style="font-weight:700; position:absolute; margin-left:4vw;">Service Manager</p> -->
     </div>
@@ -59,7 +59,7 @@ export default {
     justify-content: space-between;
     width:20vw;
     position:absolute;
-    margin-left:15vw;
+    left:10vw;
     margin-top:10vw;
 }
 .about-us > p{
@@ -115,7 +115,7 @@ p {
   height: 30px;
   position: absolute;
   margin-top: 5vw;
-  left: 15vw;
+  left: 10vw;
   color: #ffffff;
   font-size: 15px;
   font-family: "Raleway";

@@ -2,7 +2,7 @@
   <div class="main">
     <h1>Contact Us</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-    <form style="width:40vw;margin:0 auto;">
+    <form style="width:40vw;margin:0 auto;" v-on:submit.prevent="submitHandler()">
       <div class="form-group row">
         <div class="col">
           <input
@@ -10,6 +10,7 @@
             placeholder="First Name"
             class="form-control input-lg"
             name="firstname"
+            v-model="firstname"
           />
         </div>
         <div class="col">
@@ -18,15 +19,16 @@
             placeholder="Last Name"
             class="form-control input-lg"
             name="lastname"
+            v-model="lastname"
           />
         </div>
       </div>
       <div class="form-group row">
         <div class="col">
-          <input type="text" placeholder="Phone" class="form-control input-lg" name="first_name" />
+          <input type="text" v-model.trim="phone" placeholder="Phone" class="form-control input-lg" name="phone" />
         </div>
         <div class="col">
-          <input type="text" placeholder="Email" class="form-control input-lg" name="first_name" />
+          <input type="text" id="email" v-model.trim="email" :class="{invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email)}" placeholder="Email" class="form-control input-lg" name="email" />
         </div>
       </div>
       <input
@@ -35,18 +37,50 @@
         class="form-control input-lg p-0"
         id="message"
         name="first_name"
+        v-model="message"
       />
+    <button class="sendButton">Send</button>
     </form>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value id="defaultCheck1" />
       <label class="form-check-label" for="defaultCheck1">subscribe to the newsletter</label>
     </div>
 
-    <button class="sendButton">Send</button>
   </div>
 </template>
 
 <script>
+import {email,required,minLength} from 'vuelidate/lib/validators'
+
+const isPhone = (value) => /^1(3|4|5|7|8)\d{9}$/.test(value);  //phone valid
+
+export default {
+  name: 'Form',
+  validations:{
+     fistname:{required,minLength:minLength(3)},
+     lastname:{required,minLength:minLength(6)},
+     phone:isPhone,
+     email:{email,required},
+     message:{required}
+  },
+  data:() => ({
+     firstname:'',
+     lastname:'',
+     phone:'',
+     email:'',
+     message:''
+    
+  }),
+  methods:{
+    submitHandler(){
+      if(this.$v.invalid){
+        this.$v.$touch()
+        console.log("NOT EMAILS")
+        return
+      }
+    }
+  }
+}
 
 </script>
 
@@ -80,12 +114,13 @@
 
 .main {
   margin-top:10px;
-  height: 35vw;
+  height: 40vw;
   margin: 0 auto;
+ 
 
 }
 .main > h1 {
-  padding:1.5vw;
+  padding:2.2vw;
   margin-top: 3vw;
   color: black;
   font-size: 2.3em;
@@ -114,5 +149,9 @@
   &:hover {
     background-color: black;
   }
+}
+
+.invalid{
+  color:red;
 }
 </style>

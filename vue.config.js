@@ -1,3 +1,3 @@
 module.exports={
-    publicPath:"mermaidsknees.github.io"
+    publicPath:'/mermaidsknees.github.io/dart-service-manager'
 }
